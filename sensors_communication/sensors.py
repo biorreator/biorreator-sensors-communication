@@ -24,11 +24,11 @@ class TemperatureSensor():
 class PhSensor():
 
     def collect_data(self):
-        ph_samples = 20
+        ph_samples = 100
         ph_adc_sum = 0.0
         for i in range(0, ph_samples):
-            print "AQUII"
             ph_adc = adc.read_adc(0, gain=GAIN)
+            ph_adc = (ph_adc * 0.1875)/1000
             ph_adc_sum += ph_adc
         ph_adc_average = ph_adc_sum/ph_samples
         return ph_adc_average
