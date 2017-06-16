@@ -17,5 +17,5 @@ class TemperatureSensor():
             ds18b20_temperature = float(ds18b20_data[2:])
             ds18b20_temperature = ds18b20_temperature/1000
             ds18b20_sum += ds18b20_temperature
-            ds18b20_average = ds18b20_sum/temperature_samples
+        ds18b20_average = ds18b20_sum/temperature_samples
         return ds18b20_average
