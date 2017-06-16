@@ -1,4 +1,5 @@
 from sensors_communication.sensors import TemperatureSensor
+from sensors_communication.sensors import PhSensor
 from sensors_communication.measure import Measure
 import math
 
