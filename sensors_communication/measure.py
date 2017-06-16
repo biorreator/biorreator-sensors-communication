@@ -11,11 +11,13 @@ class Measure():
     def push_callback(self):
         url = env["server_address"]+"/api/reaction/2bd80803-0bb1-4387-a6ed-0e4c9a144341/measures"
         data = {
-            "temperature": self.temperature,
-            "density": self.density,
-            "pressureA": self.pressureA,
-            "pressureB": self.pressureB,
+            'temperature': self.temperature,
+            'density': self.density,
+            'pressureA': self.pressureA,
+            'pressureB': self.pressureB,
         }
+        print data
+        print url
         # verify if there is some token auth for api
-        r = requests.post(url, headers={}, data=data)
+        r = requests.post(url, data=data)
         print(r.json())
