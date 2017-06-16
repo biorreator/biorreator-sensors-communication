@@ -6,7 +6,7 @@ GAIN = 1
 
 class TemperatureSensor():
     def collect_data(self):
-        temperature_samples = 100
+        temperature_samples = 5
         ds18b20_sum = 0.0
         for i in range(0, temperature_samples):
             tfile = open("/sys/bus/w1/devices/28-041661cf4eff/w1_slave")
