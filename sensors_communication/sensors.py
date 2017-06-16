@@ -23,7 +23,7 @@ class TemperatureSensor():
 
 class PhSensor():
 
-    def collect_data():
+    def collect_data(self):
         ph_samples = 20
         ph_adc_sum = 0.0
         for i in range(0, ph_samples):
