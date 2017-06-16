@@ -27,8 +27,21 @@ class PhSensor():
         ph_samples = 100
         ph_adc_sum = 0.0
         for i in range(0, ph_samples):
-            ph_adc = adc.read_adc(0, gain=GAIN)
+            ph_adc = adc.read_adc(1, gain=GAIN)
             ph_adc = (ph_adc * 0.1875)/1000
             ph_adc_sum += ph_adc
         ph_adc_average = ph_adc_sum/ph_samples
         return ph_adc_average
+
+class PressureSensor():
+
+    def collect_data(self):
+        pressure_samples = 100
+        mp5500dp_adc_sum = 0.0
+        for i in range(0, pressure_samples):
+            mp5500dp_adc = adc.read_adc(0, gain=GAIN)
+            tense = (mp5500dp_adc * 0.1875)/1000
+            mp5500dp_adc = (((tense/10)-0.2)/0.009)
+            mp5500dp_adc_sum += mp5500dp_adc
+        mp5500dp_adc_average = mp5500dp_adc_sum/pressure_samples
+        return mp5500dp_adc_average
