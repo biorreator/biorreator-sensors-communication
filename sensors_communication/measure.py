@@ -21,5 +21,5 @@ class Measure():
         print data
         print url
         # verify if there is some token auth for api
-        r = requests.post(url, data=data)
+        r = requests.post(url, headers={'Content-Type': 'application/json'}, data=data)
         print(r.json())
