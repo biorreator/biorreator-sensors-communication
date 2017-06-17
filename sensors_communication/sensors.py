@@ -84,11 +84,11 @@ class UltrasonicSensor:
             distance = round(distance, 2)
             return distance
 
-    def check_distance
-        maximum_distance = 20
-        if self.collect_data < maximum_distance
-            os.system("/home/pi/Desktop/pi2/bioreator-api/scripts/turn_on.py 17")
+    def check_distance(self):
+        maximum_distance = 8
+        if self.collect_data > maximum_distance
+            os.system("/home/pi/Desktop/pi2/bioreator-api/scripts/turn_on.py 22")
             print "PASSOU1"
         else
-            os.system("/home/pi/Desktop/pi2/bioreator-api/scripts/turn_off.py 17")
+            os.system("/home/pi/Desktop/pi2/bioreator-api/scripts/turn_off.py 22")
             print "PASSOU2"
