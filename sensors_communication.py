@@ -18,9 +18,9 @@ def check_ultrasonic_distance():
     print ultrasonic_distance
     maximum_distance = 8
     if ultrasonic_distance > maximum_distance:
-        os.system("/home/pi/Desktop/pi2/bioreator-api/scripts/turn_on.py 22")
+        os.system("scripts/turn_on.py 22")
     else:
-        os.system("/home/pi/Desktop/pi2/bioreator-api/scripts/turn_off.py 22")
+        os.system("scripts/turn_off.py 22")
 
 while True:
     # measure.temperature = temperature_sensor.collect_data()
