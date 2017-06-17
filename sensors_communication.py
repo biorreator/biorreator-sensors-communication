@@ -12,8 +12,8 @@ ultrasonic_sensor = UltrasonicSensor()
 measure = Measure()
 
 while True:
-    measure.temperature = temperature_sensor.collect_data()
-    measure.pressureA = ph_sensor.collect_data() #change pressureA to ph
-    measure.density = pressure_sensor.collect_data()
-    measure.push_callback()
+    # measure.temperature = temperature_sensor.collect_data()
+    # measure.pressureA = ph_sensor.collect_data() #change pressureA to ph
+    # measure.density = pressure_sensor.collect_data()
+    # measure.push_callback()
     print ultrasonic_sensor.collect_data()
