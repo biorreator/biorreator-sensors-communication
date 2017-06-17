@@ -19,4 +19,13 @@ while True:
     # measure.pressureA = ph_sensor.collect_data() #change pressureA to ph
     # measure.density = pressure_sensor.collect_data()
     # measure.push_callback()
-    ultrasonic_sensor.check_distance()
+    ultrasonic_distance = ultrasonic_sensor.check_distance()
+    print "DISTANCIA:"
+    print ultrasonic_distance
+    maximum_distance = 8
+    if ultrasonic_distance > maximum_distance
+        os.system("/home/pi/Desktop/pi2/bioreator-api/scripts/turn_on.py 22")
+        print "PASSOU1"
+    else
+        os.system("/home/pi/Desktop/pi2/bioreator-api/scripts/turn_off.py 22")
+        print "PASSOU2"
