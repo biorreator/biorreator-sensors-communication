@@ -88,5 +88,7 @@ class UltrasonicSensor:
         maximum_distance = 20
         if self.collect_data < maximum_distance
             os.system("/home/pi/Desktop/pi2/bioreator-api/scripts/turn_on.py 17")
+            print "PASSOU1"
         else
             os.system("/home/pi/Desktop/pi2/bioreator-api/scripts/turn_off.py 17")
+            print "PASSOU2"
