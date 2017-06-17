@@ -1,3 +1,3 @@
 env = {
-    'server_address': 'https://bioreator-pi.herokuapp.com'
+    'server_address': 'http://localhost:3000'
 }
