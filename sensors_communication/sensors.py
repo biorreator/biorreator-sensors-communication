@@ -52,3 +52,4 @@ class PressureSensor():
 class UltrasonicSensor:
 
     def collect_data(self):
+        print "teste"
