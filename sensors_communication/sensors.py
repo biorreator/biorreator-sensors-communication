@@ -63,7 +63,7 @@ class UltrasonicSensor:
         GPIO.setup(TRIG,GPIO.OUT)
         GPIO.setup(ECHO,GPIO.IN)
 
-        while True
+        while True:
 
             GPIO.output(TRIG, False)
             print "Waitng For Sensor To Settle"
