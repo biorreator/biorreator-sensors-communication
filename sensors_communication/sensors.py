@@ -58,7 +58,7 @@ class UltrasonicSensor:
         TRIG = 23
         ECHO = 24
 
-        print "Distance measurement in progress
+        print "Distance measurement in progress"
 
         GPIO.setup(TRIG,GPIO.OUT)
         GPIO.setup(ECHO,GPIO.IN)
@@ -66,7 +66,7 @@ class UltrasonicSensor:
         while True
 
             GPIO.output(TRIG, False)
-            print "Waitng For Sensor To Settle
+            print "Waitng For Sensor To Settle"
             time.sleep(2)
 
             GPIO.output(TRIG, True)
