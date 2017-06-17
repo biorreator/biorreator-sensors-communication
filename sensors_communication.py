@@ -49,4 +49,4 @@ while True:
 
     distance = pulse_duration * 17150
     distance = round(distance, 2)
-    return distance
+    print distance
