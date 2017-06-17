@@ -19,4 +19,4 @@ while True:
     measure.pressureA = ph_sensor.collect_data() #change pressureA to ph
     measure.density = pressure_sensor.collect_data()
     measure.push_callback()
-    print ultrasonic_sensor.collect_data()
+    ultrasonic_sensor.check_distance()

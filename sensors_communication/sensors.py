@@ -83,3 +83,10 @@ class UltrasonicSensor:
             distance = pulse_duration * 17150
             distance = round(distance, 2)
             return distance
+
+    def check_distance
+        maximum_distance = 20
+        if self.collect_data < maximum_distance
+            os.system("/home/pi/Desktop/pi2/bioreator-api/scripts/turn_on.py 17")
+        else
+            os.system("/home/pi/Desktop/pi2/bioreator-api/scripts/turn_off.py 17")
