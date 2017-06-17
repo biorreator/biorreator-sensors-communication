@@ -1,5 +1,7 @@
 import math
 import Adafruit_ADS1x15
+import RPi.GPIO as GPIO
+import time
 
 
 adc = Adafruit_ADS1x15.ADS1115()
@@ -53,7 +55,6 @@ class UltrasonicSensor:
 
     def collect_data(self):
         GPIO.setmode(GPIO.BCM)
-
         TRIG = 23
         ECHO = 24
 
