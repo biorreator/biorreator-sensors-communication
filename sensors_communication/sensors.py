@@ -1,5 +1,7 @@
 import math
 import Adafruit_ADS1x15
+import RPi.GPIO as GPIO
+import time
 
 adc = Adafruit_ADS1x15.ADS1115()
 GAIN = 2/3
@@ -51,8 +53,7 @@ class PressureSensor():
 class UltrasonicSensor:
 
     def collect_data(self):
-        import RPi.GPIO as GPIO
-        import time
+        global pulse_start, pulse_end
         GPIO.setmode(GPIO.BCM)
 
         TRIG = 23
