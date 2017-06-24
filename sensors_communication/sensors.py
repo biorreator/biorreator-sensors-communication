@@ -48,7 +48,7 @@ class PressureSensor():
             difference = mp5500dp1_adc - mp5500dp2_adc
             tense = (difference * 0.1875)/1000
             mp5500dp_adc = (tense-0.189)/0.009
-	        density = mp5500dp_adc/(9.81*0.22)
+	    density = mp5500dp_adc/(9.81*0.25)
             mp5500dp_adc_sum += density
         mp5500dp_adc_average = mp5500dp_adc_sum/pressure_samples
         return mp5500dp_adc_average
