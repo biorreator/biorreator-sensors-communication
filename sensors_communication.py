@@ -23,8 +23,12 @@ def check_ultrasonic_distance():
         os.system("scripts/turn_off.py 22")
 
 while True:
-    # measure.temperature = temperature_sensor.collect_data()
-    # measure.pressureA = ph_sensor.collect_data() #change pressureA to ph
-    # measure.density = pressure_sensor.collect_data()
-    # measure.push_callback()
-    check_ultrasonic_distance()
+#    measure.temperature = temperature_sensor.collect_data()
+#    measure.ph = ph_sensor.collect_data() 
+#    measure.density = pressure_sensor.collect_data()
+#    measure.push_callback()
+#    check_ultrasonic_distance()
+#    print "temp"
+#    print measure.temperature
+#    print "ph"
+#    print measure.ph

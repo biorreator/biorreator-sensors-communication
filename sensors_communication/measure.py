@@ -6,17 +6,15 @@ class Measure():
     def __init__(self):
         self.temperature = 0
         self.density = 0
-        self.pressureA = 0
-        self.pressureB = 0
+        self.ph = 0
 
     def push_callback(self):
-        url = env["server_address"]+"/api/reaction/2bd80803-0bb1-4387-a6ed-0e4c9a144341/measures"
+        url = env["server_address"]+"/api/reactions/881ba792-1ee8-422a-8d7c-a4fd44eff703/measures"
         print url
         data = {
             "temperature": self.temperature,
             "density": self.density,
-            "pressureA": self.pressureA,
-            "pressureB": self.pressureB,
+            "ph": self.ph
         }
         data = json.dumps(data)
         print data

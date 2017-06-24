@@ -44,6 +44,7 @@ class PressureSensor():
         for i in range(0, pressure_samples):
             mp5500dp_adc = adc.read_adc(0, gain=GAIN)
             tense = (mp5500dp_adc * 0.1875)/1000
+	    print tense
             mp5500dp_adc = (tense-0.189)/0.009
 	    density = mp5500dp_adc/(9.81*0.22)
             mp5500dp_adc_sum += density
