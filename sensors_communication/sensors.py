@@ -31,7 +31,8 @@ class PhSensor():
         ph_adc_sum = 0.0
         for i in range(0, ph_samples):
             ph_adc = adc.read_adc(1, gain=GAIN)
-            ph_adc = (ph_adc * 0.1875)/1000
+            tense = (ph_adc * 0.1875)/1000
+            ph_adc = -5.7916 * tense + 22.933
             ph_adc_sum += ph_adc
         ph_adc_average = ph_adc_sum/ph_samples
         return ph_adc_average
@@ -42,14 +43,14 @@ class PressureSensor():
         pressure_samples = 100
         mp5500dp_adc_sum = 0.0
         for i in range(0, pressure_samples):
-            mp5500dp_adc = adc.read_adc(0, gain=GAIN)
-            tense = (mp5500dp_adc * 0.1875)/1000
-	    print tense
+            mp5500dp1_adc = adc.read_adc(0, gain=GAIN)
+            mp5500dp2_adc = adc.read_adc(2, gain=GAIN)
+            difference = mp5500dp1_adc - mp5500dp2_adc
+            tense = (difference * 0.1875)/1000
             mp5500dp_adc = (tense-0.189)/0.009
-	    density = mp5500dp_adc/(9.81*0.22)
+	        density = mp5500dp_adc/(9.81*0.22)
             mp5500dp_adc_sum += density
         mp5500dp_adc_average = mp5500dp_adc_sum/pressure_samples
-	print "MEDIA TENSAO:"
         return mp5500dp_adc_average
 
 class UltrasonicSensor:
