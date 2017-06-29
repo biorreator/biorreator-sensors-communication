@@ -1,5 +1,7 @@
-from sensors_communication.sensors import UltrasonicSensor
+import requests
+import json
 from sensors_communication.env_config import env
+from sensors_communication.sensors import UltrasonicSensor
 
 ultrasonic_sensor = UltrasonicSensor()
 
