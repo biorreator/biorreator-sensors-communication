@@ -1,4 +1,5 @@
 from sensors_communication.sensors import UltrasonicSensor
+from sensors_communication.env_config import env
 
 ultrasonic_sensor = UltrasonicSensor()
 
@@ -9,19 +10,18 @@ def check_ultrasonic_distance():
     maximum_distance = 8
     sent = False
     if ultrasonic_distance > maximum_distance:
-        if !sent:
+        if sent == False:
             send_push_notification()
             sent = True
+	    print "There's no more sugar"
     else:
-        console.log("There's still sugar")
+	sent = False
+        print "There's still sugar"
 
 def send_push_notification():
-    url = env["server_address"]+"/api/addSugar"
+    url = env["server_address"]+"/api/reaction/addSugar"
     print url
-    data = {}
-    data = json.dumps(data)
-    print data
-    r = requests.post(url, headers={'Content-Type': 'application/json'}, data=data)
+    r = requests.get(url)
     print(r.json())
 
 while True:
