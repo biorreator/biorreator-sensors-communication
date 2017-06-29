@@ -7,10 +7,22 @@ def check_ultrasonic_distance():
     print "ultrasonico DISTANCIA:"
     print ultrasonic_distance
     maximum_distance = 8
+    sent = False
     if ultrasonic_distance > maximum_distance:
-        os.system("scripts/turn_on.py 22")
+        if !sent:
+            send_push_notification()
+            sent = True
     else:
-        os.system("scripts/turn_off.py 22")
+        console.log("There's still sugar")
+
+def send_push_notification():
+    url = env["server_address"]+"/api/addSugar"
+    print url
+    data = {}
+    data = json.dumps(data)
+    print data
+    r = requests.post(url, headers={'Content-Type': 'application/json'}, data=data)
+    print(r.json())
 
 while True:
     check_ultrasonic_distance()
