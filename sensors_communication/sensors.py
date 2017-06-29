@@ -47,11 +47,11 @@ class PressureSensor():
             mp5500dp2_adc = adc.read_adc(2, gain=GAIN)
             tense_1 = (mp5500dp1_adc * 0.1875)/1000
             tense_2 = (mp5500dp2_adc * 0.1875)/1000
-            zero_1 = 0.20
-            zero_2 = 0.19
+            zero_1 = 0.161
+            zero_2 = 0.230
             calibration_1 = tense_1 - zero_1
             calibration_2 = tense_2 - zero_2
-            difference = (calibration_2 - calibration_1)/0.009
+            difference = -(calibration_1 - calibration_2)/0.009
 	    density = difference/(9.81*0.25) * 1000
             mp5500dp_adc_sum += density
         mp5500dp_adc_average = mp5500dp_adc_sum/pressure_samples
