@@ -30,7 +30,7 @@ class PhSensor():
         ph_samples = 100
         ph_adc_sum = 0.0
         for i in range(0, ph_samples):
-            ph_adc = adc.read_adc(1, gain=GAIN)
+            ph_adc = adc.read_adc(2, gain=GAIN)
             tense = (ph_adc * 0.1875)/1000
             ph_adc = -5.7916 * tense + 22.933
             ph_adc_sum += ph_adc
@@ -44,7 +44,7 @@ class PressureSensor():
         mp5500dp_adc_sum = 0.0
         for i in range(0, pressure_samples):
             mp5500dp1_adc = adc.read_adc(0, gain=GAIN)
-            mp5500dp2_adc = adc.read_adc(2, gain=GAIN)
+            mp5500dp2_adc = adc.read_adc(1, gain=GAIN)
             tense_1 = (mp5500dp1_adc * 0.1875)/1000
             tense_2 = (mp5500dp2_adc * 0.1875)/1000
             zero_1 = 0.160
