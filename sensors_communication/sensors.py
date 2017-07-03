@@ -32,6 +32,7 @@ class PhSensor():
         for i in range(0, ph_samples):
             ph_adc = adc.read_adc(1, gain=GAIN)
             tense = (ph_adc * 0.1875)/1000
+	    print tense
             ph_adc = -5.7916 * tense + 22.933
             ph_adc_sum += ph_adc
         ph_adc_average = ph_adc_sum/ph_samples

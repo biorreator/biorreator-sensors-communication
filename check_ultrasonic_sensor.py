@@ -21,10 +21,9 @@ def check_ultrasonic_distance():
         print "There's still sugar"
 
 def send_push_notification():
-    url = env["server_address"]+"/api/reaction/addSugar"
+    url = env["server_address"]+"/api/reactions/addSugar"
     print url
     r = requests.get(url)
-    print(r.json())
 
 while True:
     check_ultrasonic_distance()
