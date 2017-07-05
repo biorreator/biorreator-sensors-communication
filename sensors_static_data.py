@@ -10,12 +10,12 @@ ph_sensor = PhSensor()
 pressure_sensor = PressureSensor()
 measure = Measure()
 
-def get_sensors_data:
+def get_sensors_data():
     measure.temperature = temperature_sensor.collect_data()
     measure.ph = ph_sensor.collect_data()
     measure.density = pressure_sensor.collect_data()
 
-def show_sensors_data:
+def show_sensors_data():
     print measure.temperature
     print measure.ph
     print measure.density

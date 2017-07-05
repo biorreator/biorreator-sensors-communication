@@ -45,7 +45,6 @@ class PressureSensor():
         for i in range(0, pressure_samples):
             mp5500dp_adc = adc.read_adc(1, gain=GAIN)
             tense = (mp5500dp_adc * 0.1875)/1000
-	    print tense
             zero = 0.2152
             calibration = tense - zero
 	    dp = calibration/0.009
