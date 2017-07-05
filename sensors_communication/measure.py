@@ -1,6 +1,7 @@
 import requests
 import json
 from sensors_communication.env_config import env
+import sys
 
 class Measure():
     def __init__(self):
@@ -9,7 +10,7 @@ class Measure():
         self.ph = 0
 
     def push_callback(self):
-        url = env["server_address"]+"/api/reactions/881ba792-1ee8-422a-8d7c-a4fd44eff703/measures"
+        url = env["server_address"]+"/api/reactions/" + sys.argv[1] + "/measures"
         print url
         data = {
             "temperature": self.temperature,
